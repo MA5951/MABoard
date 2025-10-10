@@ -41,6 +41,7 @@ class SettingsDialog extends StatefulWidget {
 
   final FutureOr<void> Function(String? data)? onIPAddressChanged;
   final FutureOr<void> Function(String? data)? onTeamNumberChanged;
+  final FutureOr<void> Function(String? data)? onProgramerName;
   final void Function(IPAddressMode mode)? onIPAddressModeChanged;
   final void Function(Color color)? onColorChanged;
   final void Function(bool value)? onGridToggle;
@@ -63,6 +64,7 @@ class SettingsDialog extends StatefulWidget {
     required this.preferences,
     this.onTeamNumberChanged,
     this.onIPAddressModeChanged,
+    this.onProgramerName,
     this.onIPAddressChanged,
     this.onColorChanged,
     this.onGridToggle,
@@ -121,7 +123,7 @@ class _SettingsDialogState extends State<SettingsDialog> {
                     padding: const EdgeInsets.symmetric(horizontal: 4.0),
                     child: SingleChildScrollView(
                       child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxHeight: 250),
+                        constraints: const BoxConstraints(maxHeight: 310),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -343,6 +345,23 @@ class _SettingsDialogState extends State<SettingsDialog> {
             initialValue: IPAddressMode.fromIndex(
               widget.preferences.getInt(PrefKeys.ipAddressMode),
             ),
+          ),
+        ),
+      ],
+    ),
+    const SizedBox(height: 5),
+    Row(
+      children: [
+        Flexible(
+          child: DialogTextInput(
+            initialText:
+                widget.preferences.getString(PrefKeys.programerName) ??
+                Defaults.programerName,
+            label: 'Programmer Name',
+            onSubmit: (data) async {
+              await widget.onProgramerName?.call(data);
+              setState(() {});
+            },
           ),
         ),
       ],

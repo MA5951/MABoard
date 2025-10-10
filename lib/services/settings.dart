@@ -53,6 +53,7 @@ class Defaults {
 
   static const int teamNumber = 9999;
   static const int gridSize = 128;
+  static const String programerName = 'Galdo';
 
   static const bool layoutLocked = false;
   static const bool showGrid = true;
@@ -83,4 +84,5 @@ class PrefKeys {
   static String gridDpiOverride = 'grid_dpi_override';
   static String windowPosition = 'window_position';
   static String autoTextSubmitButton = 'auto_text_submit_button';
+  static String programerName = 'programer_name';
 }

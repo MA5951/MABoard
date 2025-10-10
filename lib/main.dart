@@ -81,6 +81,7 @@ void main() async {
   String ipAddress =
       preferences.getString(PrefKeys.ipAddress) ?? Defaults.ipAddress;
 
+
   NTConnection ntConnection = NTConnection(ipAddress);
 
   LicenseRegistry.addLicense(() async* {

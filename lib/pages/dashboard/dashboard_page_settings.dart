@@ -29,6 +29,8 @@ mixin DashboardPageSettings on DashboardPageViewModel {
 
           changeIPAddressMode(mode);
         },
+        onProgramerName: (data) => logger.info( 'Programmer is $data')
+        ,
         onIPAddressChanged: (String? data) async {
           if (data == null ||
               data == preferences.getString(PrefKeys.ipAddress)) {

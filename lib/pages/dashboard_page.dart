@@ -914,41 +914,7 @@ class _DashboardPageState extends State<DashboardPage>
         child: const Text('Edit'),
       ),
       // Help
-      SubmenuButton(
-        style: menuButtonStyle,
-        menuChildren: [
-          // About
-          MenuItemButton(
-            style: menuButtonStyle,
-            onPressed: () {
-              model.displayAboutDialog(context);
-            },
-            child: const Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.info_outline),
-                SizedBox(width: 8),
-                Text('About'),
-              ],
-            ),
-          ),
-          // Check for Updates (not for WPILib distribution)
-          if (!isWPILib)
-            MenuItemButton(
-              style: menuButtonStyle,
-              onPressed: () => model.checkForUpdates(),
-              child: const Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.update_outlined),
-                  SizedBox(width: 8),
-                  Text('Check for Updates'),
-                ],
-              ),
-            ),
-        ],
-        child: const Text('Help'),
-      ),
+      
     ];
 
     MenuBar menuBar = MenuBar(
