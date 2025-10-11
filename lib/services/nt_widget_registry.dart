@@ -272,9 +272,10 @@ class NTWidgetRegistry {
     registerMultiTopic(
       name: ReefGamePieceStatus.widgetType,
       model: ReefGamePieceStatusModel.new,
+      aliases: {'ReefGamePieceStatus'},
       widget: ReefGamePieceStatus.new,
       fromJson: ReefGamePieceStatusModel.fromJson,
-      minWidth: _normalSize * 3,
+      minWidth: _normalSize ,
       minHeight: _normalSize,
       defaultWidth: 3,
     );
