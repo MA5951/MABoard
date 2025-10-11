@@ -1,3 +1,4 @@
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/reef_gamepiece_status.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dot_cast/dot_cast.dart';
@@ -171,6 +172,7 @@ class SingleTopicNTWidgetModel extends NTWidgetModel {
         BooleanBox.widgetType,
         ToggleSwitch.widgetType,
         ToggleButton.widgetType,
+        ReefGamePieceStatus.widgetType,
       ]);
     }
 

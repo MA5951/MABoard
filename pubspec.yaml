@@ -78,6 +78,7 @@ flutter:
     - assets/logos/
     - assets/fields/
     - assets/third_party_licenses/
+    - assets/reefscape/
 
 import_sorter:
   comments: false

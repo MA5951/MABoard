@@ -1,3 +1,4 @@
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/reef_gamepiece_status.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dot_cast/dot_cast.dart';
@@ -263,6 +264,16 @@ class NTWidgetRegistry {
       model: FMSInfoModel.new,
       widget: FMSInfo.new,
       fromJson: FMSInfoModel.fromJson,
+      minWidth: _normalSize * 3,
+      minHeight: _normalSize,
+      defaultWidth: 3,
+    );
+
+    registerMultiTopic(
+      name: ReefGamePieceStatus.widgetType,
+      model: ReefGamePieceStatusModel.new,
+      widget: ReefGamePieceStatus.new,
+      fromJson: ReefGamePieceStatusModel.fromJson,
       minWidth: _normalSize * 3,
       minHeight: _normalSize,
       defaultWidth: 3,
