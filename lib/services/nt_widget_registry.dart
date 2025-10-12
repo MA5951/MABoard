@@ -1,4 +1,6 @@
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/malog_controller.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/reef_gamepiece_status.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/subsystem_status.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dot_cast/dot_cast.dart';
@@ -88,7 +90,7 @@ class NTWidgetRegistry {
   static final Map<String, double> _defaultWidthMap = {};
   static final Map<String, double> _defaultHeightMap = {};
 
-  static const double _normalSize = 128.0;
+  static const double _normalSize = 100;
 
   NTWidgetRegistry._();
 
@@ -278,6 +280,29 @@ class NTWidgetRegistry {
       minWidth: _normalSize ,
       minHeight: _normalSize,
       defaultWidth: 3,
+    );
+
+    registerMultiTopic(
+      name: MALogControl.widgetType,
+      model: MALogControlModel.new,
+      aliases: {'MALogControl'},
+      widget: MALogControl.new,
+      fromJson: MALogControlModel.fromJson,
+      minWidth: _normalSize ,
+      minHeight: _normalSize,
+      defaultWidth: 3,
+    );
+
+    registerMultiTopic(
+      name: SubsystemStatus.widgetType,
+      model: SubsystemStatusModel.new,
+      aliases: {'Subsystem Status'},
+      widget: SubsystemStatus.new,
+      fromJson: SubsystemStatusModel.fromJson,
+      minWidth: _normalSize*2,
+      minHeight: _normalSize*2,
+      defaultWidth: 3,
+      defaultHeight: 2,
     );
 
     registerMultiTopic(
