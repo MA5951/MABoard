@@ -52,7 +52,7 @@ class Defaults {
   static final String ipAddress = defaultIPForPlatform();
 
   static const int teamNumber = 9999;
-  static const int gridSize = 128;
+  static const int gridSize = 100;
   static const String programerName = 'Galdo';
 
   static const bool layoutLocked = false;

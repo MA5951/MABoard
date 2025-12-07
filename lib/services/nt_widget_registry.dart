@@ -1,5 +1,10 @@
+
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/ImageToggle.dart';
+
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/malog_controller.dart';
+
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/reef_gamepiece_status.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/subsystem_status.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dot_cast/dot_cast.dart';
@@ -89,7 +94,7 @@ class NTWidgetRegistry {
   static final Map<String, double> _defaultWidthMap = {};
   static final Map<String, double> _defaultHeightMap = {};
 
-  static const double _normalSize = 128.0;
+  static const double _normalSize = 100;
 
   NTWidgetRegistry._();
 
