@@ -1,3 +1,4 @@
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/ImageToggle.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/reef_gamepiece_status.dart';
 import 'package:flutter/material.dart';
 
@@ -275,9 +276,23 @@ class NTWidgetRegistry {
       aliases: {'ReefGamePieceStatus'},
       widget: ReefGamePieceStatus.new,
       fromJson: ReefGamePieceStatusModel.fromJson,
-      minWidth: _normalSize ,
+      minWidth: _normalSize,
       minHeight: _normalSize,
       defaultWidth: 3,
+    );
+
+    registerMultiTopic(
+      name: GenericImageToggle.widgetType, // 'Generic Image Toggle'
+      model: GenericImageToggleModel
+          .new, // (ntConnection, preferences, topic, {period})
+          aliases: {'GenericImage'},
+      widget: GenericImageToggle.new, // builder for the view
+      fromJson:
+          GenericImageToggleModel.fromJson, // restore from saved dashboards
+      minWidth: _normalSize * 2, // tweak to taste
+      minHeight: _normalSize * 1.2,
+      defaultWidth: 3, // grid cells
+      defaultHeight: 2,
     );
 
     registerMultiTopic(

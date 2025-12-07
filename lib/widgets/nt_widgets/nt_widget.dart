@@ -1,3 +1,4 @@
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/ImageToggle.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/reef_gamepiece_status.dart';
 import 'package:flutter/material.dart';
 
@@ -173,6 +174,7 @@ class SingleTopicNTWidgetModel extends NTWidgetModel {
         ToggleSwitch.widgetType,
         ToggleButton.widgetType,
         ReefGamePieceStatus.widgetType,
+        GenericImageToggle.widgetType
       ]);
     }
 
