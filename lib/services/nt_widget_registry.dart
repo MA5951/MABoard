@@ -1,10 +1,11 @@
-
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/ImageToggle.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/layerFlasher.dart';
 
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/malog_controller.dart';
 
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/reef_gamepiece_status.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/subsystem_status.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/pickup_source_toggle.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dot_cast/dot_cast.dart';
@@ -53,6 +54,7 @@ import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/text_display.d
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_button.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_switch.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/voltage_view.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/charged_up_scoring_level.dart';
 
 typedef NTModelJsonProvider<T extends NTWidgetModel> =
     T Function({
@@ -171,6 +173,17 @@ class NTWidgetRegistry {
       minHeight: _normalSize,
     );
 
+    registerSingleTopic(
+      name: ChargedUpScoringLevelWidget.widgetType,
+      model: ChargedUpScoringLevelModel.new,
+      widget: ChargedUpScoringLevelWidget.new,
+      fromJson: ChargedUpScoringLevelModel.fromJson,
+      minWidth: _normalSize * 2,
+      minHeight: _normalSize * 1.4,
+      defaultWidth: 3,
+      defaultHeight: 2,
+    );
+
     registerMultiTopic(
       name: AccelerometerWidget.widgetType,
       model: AccelerometerModel.new,
@@ -286,11 +299,33 @@ class NTWidgetRegistry {
       defaultWidth: 3,
     );
 
+    registerSingleTopic(
+      name: PickupSourceToggleWidget.widgetType,
+      model: PickupSourceToggleModel.new,
+      widget: PickupSourceToggleWidget.new,
+      fromJson: PickupSourceToggleModel.fromJson,
+      minWidth: _normalSize,
+      minHeight: _normalSize,
+      defaultWidth: 2,
+      defaultHeight: 2,
+    );
+
+    registerMultiTopic(
+      name: LayerFlasher.widgetType,
+      model: LayerFlasherModel.new,
+      aliases: {'LayerFlash'},
+      widget: LayerFlasher.new,
+      fromJson: LayerFlasherModel.fromJson,
+      minWidth: _normalSize,
+      minHeight: _normalSize,
+      defaultWidth: 3,
+    );
+
     registerMultiTopic(
       name: GenericImageToggle.widgetType, // 'Generic Image Toggle'
       model: GenericImageToggleModel
           .new, // (ntConnection, preferences, topic, {period})
-          aliases: {'GenericImage'},
+      aliases: {'GenericImage'},
       widget: GenericImageToggle.new, // builder for the view
       fromJson:
           GenericImageToggleModel.fromJson, // restore from saved dashboards

@@ -79,6 +79,8 @@ flutter:
     - assets/fields/
     - assets/third_party_licenses/
     - assets/reefscape/
+    - assets/chargeup/
+
 
 import_sorter:
   comments: false

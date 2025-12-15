@@ -1,5 +1,7 @@
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/ImageToggle.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/layerFlasher.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/multi_topic/reef_gamepiece_status.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/charged_up_scoring_level.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dot_cast/dot_cast.dart';
@@ -24,6 +26,8 @@ import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/text_display.d
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_button.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_switch.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/voltage_view.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/pickup_source_toggle.dart';
+
 
 sealed class NTWidgetModel extends ChangeNotifier {
   String get type;
@@ -186,6 +190,9 @@ class SingleTopicNTWidgetModel extends NTWidgetModel {
         RadialGaugeWidget.widgetType,
         GraphWidget.widgetType,
         MatchTimeWidget.widgetType,
+        LayerFlasher.widgetType,
+        ChargedUpScoringLevelWidget.widgetType,
+        PickupSourceToggleWidget.widgetType,
       ]);
     }
 
