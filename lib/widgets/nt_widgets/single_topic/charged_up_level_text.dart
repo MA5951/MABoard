@@ -185,11 +185,11 @@ class ChargedUpLevelTextWidget extends NTWidget {
   Color _levelBaseColor(int level) {
     switch (level) {
       case 1:
-        return Colors.blue;
+        return const Color.fromARGB(255, 0, 17, 255);
       case 2:
-        return Colors.orange;
+        return const Color.fromARGB(255, 255, 0, 179);
       case 3:
-        return Colors.green;
+        return Colors.orange;
       default:
         return Colors.green;
     }
