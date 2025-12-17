@@ -27,6 +27,8 @@ import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_button.
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_switch.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/voltage_view.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/pickup_source_toggle.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/charged_up_level_text.dart';
+
 
 
 sealed class NTWidgetModel extends ChangeNotifier {
@@ -193,6 +195,7 @@ class SingleTopicNTWidgetModel extends NTWidgetModel {
         LayerFlasher.widgetType,
         ChargedUpScoringLevelWidget.widgetType,
         PickupSourceToggleWidget.widgetType,
+        ChargedUpLevelTextWidget.widgetType,
       ]);
     }
 

@@ -55,6 +55,7 @@ import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_button.
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/toggle_switch.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/voltage_view.dart';
 import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/charged_up_scoring_level.dart';
+import 'package:elastic_dashboard/widgets/nt_widgets/single_topic/charged_up_level_text.dart';
 
 typedef NTModelJsonProvider<T extends NTWidgetModel> =
     T Function({
@@ -253,6 +254,17 @@ class NTWidgetRegistry {
       minHeight: _normalSize * 2,
       defaultWidth: 3,
       defaultHeight: 2,
+    );
+
+    registerSingleTopic(
+      name: ChargedUpLevelTextWidget.widgetType,
+      model: ChargedUpLevelTextModel.new,
+      widget: ChargedUpLevelTextWidget.new,
+      fromJson: ChargedUpLevelTextModel.fromJson,
+      minWidth: _normalSize * 2, // feels good for 3 labels
+      minHeight: _normalSize * 0.8,
+      defaultWidth: 2,
+      defaultHeight: 1,
     );
 
     registerMultiTopic(
